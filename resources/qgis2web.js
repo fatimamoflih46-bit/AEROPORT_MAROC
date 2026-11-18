@@ -7,12 +7,17 @@ var map = new ol.Map({
         constrainResolution: false,
         maxZoom: 28,
         minZoom: 1,
-        extent: [-2258459.852739, 2622759.542736, 328728.059492, 4235718.416379],
+        extent: [-23.719398, 20.392107, 5.617358, 36.301231],
+        projection: new ol.proj.Projection({
+            code: 'EPSG:4326',
+            //extent: [-17.103643, 20.770896, -0.998397, 35.922442],
+            units: 'degrees'
+        })
     })
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([-2258459.852739, 2622759.542736, 328728.059492, 4235718.416379], map.getSize());
+map.getView().fit([-23.719398, 20.392107, 5.617358, 36.301231], map.getSize());
 
 //change cursor
 function pointerOnFeature(evt) {
@@ -497,6 +502,17 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 
 //title
 
+var Title = new ol.control.Control({
+    element: (() => {
+        var titleElement = document.createElement('div');
+        titleElement.className = 'bottom-left-title ol-control';
+        titleElement.innerHTML = '<h2 class="project-title">aeroport maroc</h2>';
+        return titleElement;
+    })(),
+    target: 'bottom-left-container'
+});
+map.addControl(Title)
+    
 //abstract
 
 

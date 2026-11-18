@@ -70,13 +70,13 @@ var style_Aearoports_MAR_2 = function(feature, resolution){
 	}
     var style = [ new ol.style.Style({
         image: new ol.style.Icon({
-                  imgSize: [579.997, 579.997],
-                  scale: 0.06206928656527534,
-                  anchor: [289.9985, 289.9985],
+                  imgSize: [580, 580],
+                  scale: 0.03793103448275862,
+                  anchor: [290.0, 290.0],
                   anchorXUnits: "pixels",
                   anchorYUnits: "pixels",
-                  rotation: 0.043633250000000005,
-                  src: "styles/amenity=airport.svg"
+                  rotation: 0.0,
+                  src: "styles/transport_airport.svg"
             }),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
